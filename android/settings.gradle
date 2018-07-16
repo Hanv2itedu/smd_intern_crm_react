@@ -1,0 +1,3 @@
+rootProject.name = 'smd_intern_crm'
+
+include ':app'
