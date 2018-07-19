@@ -1,8 +1,8 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
 
-import Login from './components/Login';
-import Home from './components/Home';
+import Login from './containers/Login';
+import Home from './containers/Homepage';
 
 export const LoginStack = StackNavigator({
     loginScreen: {

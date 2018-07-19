@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import { CustomText } from './CustomText'
+import { CustomText } from './CustomText';
 
 export default class SquareBox extends Component {
     render() {
