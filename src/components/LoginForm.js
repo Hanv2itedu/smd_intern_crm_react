@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Form, Item, Input, Content, Card, CardItem, Text, Button } from 'native-base';
 import { StyleSheet, Alert } from 'react-native';
 
-export default class CardItemBordered extends Component {
+export default class LoginForm extends Component {
   state = {
     username: '',
     password: '',
