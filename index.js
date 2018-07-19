@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import Login from './src/components/Login';
+import App from './src/App';
 
-AppRegistry.registerComponent('smd_intern_crm', () => Login);
+AppRegistry.registerComponent('smd_intern_crm', () => App);
