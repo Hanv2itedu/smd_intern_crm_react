@@ -4,14 +4,14 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, { Component } from 'C:/Users/Ha Nguyen/AppData/Local/Microsoft/TypeScript/2.9/node_modules/@types/react';
 import {
   Platform,
   StyleSheet,
   Text,
   View
 } from 'react-native';
-import Homepage from './containers/Homepage';
+import Homepage from './src/containers/Homepage';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
