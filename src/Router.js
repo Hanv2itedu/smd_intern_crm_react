@@ -3,6 +3,7 @@ import { StackNavigator } from 'react-navigation';
 
 import Login from './containers/Login';
 import Drawer from './containers/Drawer';
+import ListCustomer from './containers/ListCustomer';
 
 export const LoginStack = StackNavigator({
     loginScreen: {
@@ -11,6 +12,7 @@ export const LoginStack = StackNavigator({
             header: null,
         }
     },
+
     homeScreen: {
         screen: Drawer,
         navigationOptions: {
