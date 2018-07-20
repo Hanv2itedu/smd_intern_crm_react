@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
+import { Drawer, Header, Left, Right, Body, Button, Icon } from 'native-base';
 import SquareBox from '../components/SquareBox';
+import SideBar from '../components/SideBar';
 import { PickerWithIcon } from '../components/PickerWithIcon';
 
 export default class Homepage extends Component {
-
+    closeDrawer() {
+        this.drawer._root.close()
+    };
+    openDrawer() {
+        this.drawer._root.open()
+    };
     constructor(props) {
         super(props);
         this.state = {
@@ -13,24 +20,38 @@ export default class Homepage extends Component {
         }
     } 
 
-    render() {
+    render() {        
         return (
-            <View>
-                <View style={styles.row}>
-                    <PickerWithIcon items={this.state.years}/>
-                    <PickerWithIcon items={this.state.months}/>
-                </View>
+            <Drawer
+                ref={(ref) => { this.drawer = ref; }}
+                content={<SideBar navigator={this.navigator} />}
+                onClose={() => this.closeDrawer()} >
                 <View>
+                    <Header>
+                        <Left>
+                            <Button transparent onPress={() => this.openDrawer()} >
+                                <Icon name='menu' />
+                            </Button>
+                        </Left>
+                        <Body />
+                        <Right />
+                    </Header>                
                     <View style={styles.row}>
-                        <SquareBox title="PROSPECT"></SquareBox>
-                        <SquareBox title="LEAD"></SquareBox>
+                        <PickerWithIcon items={this.state.years}/>
+                        <PickerWithIcon items={this.state.months}/>
                     </View>
-                    <View style={styles.row}>
-                        <SquareBox title="POTENTIAL"></SquareBox>
-                        <SquareBox title="ACTIVE"></SquareBox>
+                    <View>
+                        <View style={styles.row}>
+                            <SquareBox title="PROSPECT"></SquareBox>
+                            <SquareBox title="LEAD"></SquareBox>
+                        </View>
+                        <View style={styles.row}>
+                            <SquareBox title="POTENTIAL"></SquareBox>
+                            <SquareBox title="ACTIVE"></SquareBox>
+                        </View>
                     </View>
                 </View>
-            </View>
+            </Drawer>
         );
     }
 }

@@ -14,7 +14,7 @@ export const LoginStack = StackNavigator({
     homeScreen: {
         screen: Home,
         navigationOptions: {
-            title: 'Home',
+            header: null,
         }
     },
 
