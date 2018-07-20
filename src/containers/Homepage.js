@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Drawer, Header, Left, Right, Body, Button, Icon } from 'native-base';
+import { Drawer, Header, Left, Button, Icon, Content,Text, Body, Title, Right } from 'native-base';
 import SquareBox from '../components/SquareBox';
 import SideBar from '../components/SideBar';
 import { PickerWithIcon } from '../components/PickerWithIcon';
 
 export default class Homepage extends Component {
-    closeDrawer() {
-        this.drawer._root.close()
-    };
-    openDrawer() {
-        this.drawer._root.open()
-    };
     constructor(props) {
         super(props);
         this.state = {
@@ -22,18 +16,17 @@ export default class Homepage extends Component {
 
     render() {        
         return (
-            <Drawer
-                ref={(ref) => { this.drawer = ref; }}
-                content={<SideBar navigator={this.navigator} />}
-                onClose={() => this.closeDrawer()} >
                 <View>
-                    <Header>
+                    <Header style={{backgroundColor:'green'}}>
                         <Left>
-                            <Button transparent onPress={() => this.openDrawer()} >
+                            <Button transparent onPress={()=>{this.props.navigation.openDrawer();}} >
                                 <Icon name='menu' />
                             </Button>
                         </Left>
-                        <Body />
+                        <Body>
+                            <Title>Home</Title>
+
+                        </Body>
                         <Right />
                     </Header>                
                     <View style={styles.row}>
@@ -51,7 +44,6 @@ export default class Homepage extends Component {
                         </View>
                     </View>
                 </View>
-            </Drawer>
         );
     }
 }
