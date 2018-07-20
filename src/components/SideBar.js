@@ -1,29 +1,34 @@
 import React, { Component } from 'react';
 import { Container, List, ListItem, Text, View } from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
+import { NavigationActions } from 'react-navigation';
 
-export default class ListExample extends Component {
+class SideBar extends Component {
+  navigateToScreen = (route) => () => {
+    const navigateAction = NavigationActions.navigate({
+      routeName: route
+    });
+    this.props.navigation.dispatch(navigateAction);
+  }
   render() {
     return (
       <Container style={{ backgroundColor: '#fff', flex: 1 }} >
           <LinearGradient 
-          colors={['#FF3B30', '#F5981F']} 
-          style={{ flex: 3 }} 
+          colors={['#008000', '#AAD4AA']} 
+          style={{ flex: 30 }} 
           >
             <Text>Abc</Text>
           </LinearGradient>
-          <List style={{ flex: 7 }} >
+          <List style={{ flex: 70 }} >
             <ListItem>
-              <Text>Simon Mignolet</Text>
+              <Text onPress={this.navigateToScreen('Home')}>Home</Text>
             </ListItem>
             <ListItem>
-              <Text>Nathaniel Clyne</Text>
-            </ListItem>
-            <ListItem>
-              <Text>Dejan Lovren</Text>
-            </ListItem>
+              <Text onPress={this.navigateToScreen('ListCustomer')}>List Customer</Text>
+            </ListItem>            
           </List>
       </Container>
     );
   }
 }
+export default SideBar;
