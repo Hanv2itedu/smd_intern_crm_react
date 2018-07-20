@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
-import { Container, Content, List, ListItem, Text } from 'native-base';
+import { Container, List, ListItem, Text, View } from 'native-base';
+import LinearGradient from 'react-native-linear-gradient';
 
 export default class ListExample extends Component {
   render() {
     return (
-      <Container style={{ backgroundColor: '#fff', paddingTop: 20 }} >
-        <Content>
-          <List >
+      <Container style={{ backgroundColor: '#fff', flex: 1 }} >
+          <LinearGradient 
+          colors={['#FF3B30', '#F5981F']} 
+          style={{ flex: 3 }} 
+          >
+            <Text>Abc</Text>
+          </LinearGradient>
+          <List style={{ flex: 7 }} >
             <ListItem>
               <Text>Simon Mignolet</Text>
             </ListItem>
@@ -17,7 +23,6 @@ export default class ListExample extends Component {
               <Text>Dejan Lovren</Text>
             </ListItem>
           </List>
-        </Content>
       </Container>
     );
   }
