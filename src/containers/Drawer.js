@@ -4,18 +4,18 @@ import {Button, Icon} from 'native-base';
 
 import Homepage from './Homepage';
 import ListCustomer from './ListCustomer';
-import Login from './Login';
+import SideBar from '../components/SideBar';
 
 const DrawerMenu = createDrawerNavigator({
-    Home:{
+    Home: {
        screen: Homepage,
     },
-    ListCustomer:{
-        screen: ListCustomer,
-        
-     },
-     
-
+    ListCustomer: {
+        screen: ListCustomer,        
+    },   
+},
+{
+    contentComponent: SideBar,  
 });
 
 //const homeStack = StackNavigator({
@@ -29,7 +29,7 @@ const DrawerMenu = createDrawerNavigator({
  
 
 
-export default class Drawer extends React.Component{
+export default class Drawer extends Component{
 
     render(){
         return( 
