@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Content, Text, Button, View } from 'native-base';
+import { Container, Content, Text, Button, View,Header,Left,Right,Body,Icon } from 'native-base';
 import CardCustomer from '../components/CardCustomer';
 
 export default class ListCustomer extends Component {
@@ -20,10 +20,22 @@ export default class ListCustomer extends Component {
   render() {
     console.log(this.state);
     return (
+      
       <Container>
+         <Header>
+            <Left>
+                <Button transparent onPress={()=>{this.props.navigation.openDrawer();}} >
+                    <Icon name='menu' />
+                </Button>
+            </Left>
+            <Body />
+            <Right />
+        </Header>   
         <Content>
         <View style={styles.containerButtonStyle}>
-          <Button rounded warning><Text>Advanced Search</Text></Button>
+          <Button rounded warning>
+          <Icon name='search' />
+          </Button>
         </View>
             {this.renderCustomer()}
         </Content>

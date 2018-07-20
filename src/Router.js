@@ -2,7 +2,7 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 
 import Login from './containers/Login';
-import Home from './containers/Homepage';
+import Drawer from './containers/Drawer';
 
 export const LoginStack = StackNavigator({
     loginScreen: {
@@ -12,7 +12,7 @@ export const LoginStack = StackNavigator({
         }
     },
     homeScreen: {
-        screen: Home,
+        screen: Drawer,
         navigationOptions: {
             header: null,
         }
